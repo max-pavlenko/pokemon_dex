@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --cyan: 126, 205, 237;
+  --foreground-rgb: 22, 22, 22;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --cyan: 36, 164, 211;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 22, 22, 22;
+  }
+}
+
+body {
+  font-family: 'Inter', -apple-system, 'system-ui', sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+          to bottom,
+          transparent,
+          rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .2s all ease-in-out;
+  outline: none;
+
+&::selection {
+   background-color: rgb(var(--cyan));
+   color: rgb(230,230,230);
+ }
+
+&:focus {
+   box-shadow: 0 0 0 3px transparent;
+ }
+
+&:focus:focus-visible {
+   box-shadow: 0 0 0 3px rgb(var(--cyan));
+   border-radius: 5px;
+ }
+}
+
+button:hover {
+  box-shadow: 0 0 0 1px rgb(var(--cyan));
+  border-radius: 5px;
+}

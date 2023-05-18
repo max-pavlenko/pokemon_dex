@@ -1,0 +1,17 @@
+.table {
+  width: 100%;
+}
+
+.row {
+
+  & td, & th {
+    text-align: center;
+    text-transform: capitalize;
+    border: 2px solid rgb(var(--foreground-rgb));
+    border-collapse: collapse;
+  }
+
+  & > *:first-child {
+    width: 85%;
+  }
+}

@@ -1,0 +1,16 @@
+/** @type {import('next').NextConfig} */
+import PUBLIC_RUNTIME_CONFIG from './src/utils/publicRuntimeConfig.mjs';
+
+const nextConfig = {
+    publicRuntimeConfig: PUBLIC_RUNTIME_CONFIG,
+    reactStrictMode: true,
+    images: {
+        domains: [
+            "localhost",
+            "images.pexels.com",
+            "raw.githubusercontent.com"
+        ]
+    }
+};
+
+export default nextConfig;
