@@ -5,7 +5,7 @@ import { useActions, useAppSelector } from '@/store/store';
 import {SORT_TYPES} from "@/app/features/pokemonFilters/constants/SortTypes";
 
 type Props = {
-    sortTypes: PokemonAbilityTypes[];
+    sortTypes?: PokemonAbilityTypes[];
 } & ComponentProps<typeof SelectPillow>;
 
 const PillowsTypeList: FC<Props> = ({ sortTypes = SORT_TYPES, ...props }) => {
