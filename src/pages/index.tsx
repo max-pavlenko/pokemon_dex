@@ -32,8 +32,8 @@ const HomePage = () => {
     SET_FILTERS({pokemon: newSelectedPokemon});
   }
 
-  if (error || !data) return <b>Error... {JSON.stringify(error, null, 3)}</b>;
-  if (isLoading) return <Loader/>;
+  if (error) return <b>Error... {JSON.stringify(error, null, 3)}</b>;
+  if (isLoading || !data) return <Loader/>;
 
   return (
       <div className='flex flex-col gap-8'>
