@@ -23,7 +23,6 @@ type Move = URLSummary;
 
 type VersionGroupDetails = {
     move: Move;
-    version_group_details: any[];
 };
 
 type Sprite = {
@@ -35,12 +34,6 @@ type Sprite = {
     front_female: string | null;
     front_shiny: string;
     front_shiny_female: string | null;
-    other: {
-        dream_world: any;
-        home: any;
-        "official-artwork": any;
-    };
-    versions: any;
 };
 
 type Type = {
@@ -58,7 +51,6 @@ export type Pokemon = {
     forms: URLSummary[];
     game_indices: GameIndex[];
     height: number;
-    held_items: any[];
     id: number;
     is_default: boolean;
     location_area_encounters: string;
@@ -68,7 +60,6 @@ export type Pokemon = {
     }[];
     name: string;
     order: number;
-    past_types: any[];
     species: URLSummary;
     sprites: Sprite;
     stats: Stat[];

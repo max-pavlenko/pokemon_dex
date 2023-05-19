@@ -28,7 +28,6 @@ export const pokemonsApi = createApi({
             }),
             providesTags: ['pokemons'],
             transformErrorResponse: (error) => {
-                // Handle the error here
                 console.error('An error occurred while fetching pokemons:', error);
                 return error;
             },

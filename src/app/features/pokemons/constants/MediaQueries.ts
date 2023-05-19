@@ -1,1 +1,1 @@
-export const SM_MEDIAQUERY = 620;
+export const SM_MEDIAQUERY = 640;

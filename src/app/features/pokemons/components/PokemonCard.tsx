@@ -17,7 +17,7 @@ const PokemonCard: FC<Props> = ({pokemon, onClick}) => {
     return (
         <button className='flex h-full w-[inherit] md:w-auto md:max-w-[180px]' onClick={() => onClick(pokemon)}>
             <Outlined element='figure' className='flex w-[inherit] md:w-auto h-full p-1 pb-1.5 flex-col'>
-                <Image draggable={false} className='rounded-md mx-auto object-cover' src={front_default} alt={name} width={200} height={200}/>
+                <Image priority={true} draggable={false} className='rounded-md mx-auto object-cover' src={front_default} alt={name} width={200} height={200}/>
                 <div>
                     <figcaption className='text-center capitalize text-lg font-[600]'>
                         {name}

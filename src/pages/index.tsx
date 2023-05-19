@@ -7,17 +7,19 @@ import {SM_MEDIAQUERY} from "@/app/features/pokemons/constants/MediaQueries";
 import PillowsTypeList from "@/app/features/pokemonFilters/components/PillowsTypeList";
 import PokemonsList from "@/app/features/pokemons/components/PokemonsList";
 import {useActions, useAppSelector} from "@/store/store";
+import LargeButton from "@/app/shared/ui/LargeButton";
 
 const INCREASE_LIMIT_BY = 10;
 
 
 const HomePage = () => {
+  const [limit, setLimit] = useState(INCREASE_LIMIT_BY);
+
   const {SET_FILTERS} = useActions();
   const {pokemon: selectedPokemon,} = useAppSelector(state => state.pokemonFilters)
-  const [limit, setLimit] = useState(INCREASE_LIMIT_BY);
   const {data, isLoading, error, isFetching} = pokemonsApi.useGetPokemonsQuery({limit})
 
-  function handleMoreClick() {
+  function handleLoadMoreClick() {
     setLimit(prevState => prevState + INCREASE_LIMIT_BY)
   }
 
@@ -42,10 +44,11 @@ const HomePage = () => {
         <div className='flex flex-col-reverse sm:flex-row gap-4'>
           <div className='flex-1 flex items-center flex-col gap-2'>
             <PokemonsList pokemons={data.results} onPokemonCardClick={handlePokemonCardClick} />
+
             {isFetching && <Loader/>}
-            <button onClick={handleMoreClick} className='bg-green-700 justify-stretch w-full px-6 py-3 text-xl font-[600] text-white rounded-md'>
+            <LargeButton disabled={isFetching} onClick={handleLoadMoreClick}>
               Load more
-            </button>
+            </LargeButton>
           </div>
 
           <div className={`flex-1 static sm:sticky sm:top-1 h-max ${selectedPokemon ? 'opacity-100 visible' : 'opacity-0 invisible'} `}>

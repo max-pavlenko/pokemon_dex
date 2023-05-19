@@ -20,6 +20,28 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .2s all ease-in-out;
+  outline: none;
+
+  &::selection {
+    background-color: rgb(var(--cyan-rgb));
+    color: rgb(230,230,230);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px transparent;
+  }
+
+  &:focus:focus-visible {
+    box-shadow: 0 0 0 3px rgb(var(--cyan-rgb));
+    border-radius: 5px;
+  }
+}
+
 body {
   font-family: 'Inter', -apple-system, 'system-ui', sans-serif;
   color: rgb(var(--foreground-rgb));
@@ -41,28 +63,6 @@ body {
   &-track{
     background-color: rgba(0,0,0, 0.07);
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: .2s all ease-in-out;
-  outline: none;
-
-&::selection {
-   background-color: rgb(var(--cyan-rgb));
-   color: rgb(230,230,230);
- }
-
-&:focus {
-   box-shadow: 0 0 0 3px transparent;
- }
-
-&:focus:focus-visible {
-   box-shadow: 0 0 0 3px rgb(var(--cyan-rgb));
-   border-radius: 5px;
- }
 }
 
 button:hover {
