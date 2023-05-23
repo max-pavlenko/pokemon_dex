@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import {PokemonAbilityTypes} from "@/types/Pokemons";
-import {ABILITY_COLORS, DEFAULT_COLOR} from "@/app/features/pokemons/constants/Colors";
+import {ABILITY_COLORS, DEFAULT_COLOR, DEFAULT_TEXT_COLOR} from "@/app/features/pokemons/constants/Colors";
 
 type Props = {
     abilityName: PokemonAbilityTypes,
@@ -8,10 +8,11 @@ type Props = {
 
 const AbilityLabel: FC<Props> = ({abilityName}) => {
 
-    const backgroundColor = ABILITY_COLORS[abilityName].bg ?? DEFAULT_COLOR;
-    const textColor = ABILITY_COLORS[abilityName].text ?? 'black';
+    const {text, bg} = ABILITY_COLORS[abilityName];
+    const textColor = text ?? DEFAULT_TEXT_COLOR;
+
     return (
-        <div style={{backgroundImage: `linear-gradient(to bottom, white 5%, ${backgroundColor})`, color: textColor}} className='px-2 capitalize rounded-md text-[13px] py-0.5'>
+        <div style={{backgroundImage: `linear-gradient(to bottom, white 5%, ${bg})`, color: textColor}} className='px-2 capitalize rounded-md text-[13px] py-0.5'>
             {abilityName}
         </div>
     );

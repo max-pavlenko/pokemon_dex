@@ -1,6 +1,7 @@
 import {PokemonAbilityTypes} from "@/types/Pokemons";
 
 export const DEFAULT_COLOR = 'mistyrose';
+export const DEFAULT_TEXT_COLOR = 'black';
 
 export const ABILITY_COLORS: Record<PokemonAbilityTypes, { bg: string, text?: string }> = {
     fire: { bg: 'red', text: '#333' },

@@ -24,11 +24,11 @@ const HomePage = () => {
   }
 
   function handlePokemonCardClick(pokemon: Pokemon) {
-    const CLIENT_WIDTH = document.body.clientWidth;
+    const VIEWPORT_WIDTH = document.body.clientWidth;
     const isClickedSamePokemon = selectedPokemon?.name === pokemon.name;
     const newSelectedPokemon = isClickedSamePokemon ? null : pokemon;
 
-    if (CLIENT_WIDTH <= SM_MEDIAQUERY && !isClickedSamePokemon)
+    if (VIEWPORT_WIDTH <= SM_MEDIAQUERY && !isClickedSamePokemon)
       window.scroll({top: 0, behavior: 'smooth'});
 
     SET_FILTERS({pokemon: newSelectedPokemon});
